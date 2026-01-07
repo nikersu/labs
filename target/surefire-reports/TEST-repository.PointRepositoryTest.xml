@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="repository.PointRepositoryTest" time="5.849" tests="11" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.class.path" value="C:\Users\None\IdeaProjects\laba_konev\target\test-classes;C:\Users\None\IdeaProjects\laba_konev\target\classes;C:\Users\None\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\None\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\None\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\None\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite\1.8.1\junit-platform-suite-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite-api\1.8.1\junit-platform-suite-api-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite-engine\1.8.1\junit-platform-suite-engine-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.8.1\junit-platform-suite-commons-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-launcher\1.8.1\junit-platform-launcher-1.8.1.jar;C:\Users\None\.m2\repository\ch\qos\logback\logback-classic\1.5.19\logback-classic-1.5.19.jar;C:\Users\None\.m2\repository\ch\qos\logback\logback-core\1.5.19\logback-core-1.5.19.jar;C:\Users\None\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\None\.m2\repository\org\postgresql\postgresql\42.7.3\postgresql-42.7.3.jar;C:\Users\None\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\None\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\None\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\None\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\None\.m2\repository\org\mindrot\jbcrypt\0.4\jbcrypt-0.4.jar;C:\Users\None\.m2\repository\jakarta\servlet\jakarta.servlet-api\5.0.0\jakarta.servlet-api-5.0.0.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Europe/Samara"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Users\None\.jdks\temurin-17.0.17\bin"/>
+    <property name="sun.java.command" value="C:\Users\None\AppData\Local\Temp\surefire8367539666590487196\surefirebooter-20260107024116945_3.jar C:\Users\None\AppData\Local\Temp\surefire8367539666590487196 2026-01-07T02-41-16_728-jvmRun1 surefire-20260107024116945_1tmp surefire_0-20260107024116945_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\None\IdeaProjects\laba_konev\target\test-classes;C:\Users\None\IdeaProjects\laba_konev\target\classes;C:\Users\None\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\None\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\None\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\None\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite\1.8.1\junit-platform-suite-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite-api\1.8.1\junit-platform-suite-api-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite-engine\1.8.1\junit-platform-suite-engine-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.8.1\junit-platform-suite-commons-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-launcher\1.8.1\junit-platform-launcher-1.8.1.jar;C:\Users\None\.m2\repository\ch\qos\logback\logback-classic\1.5.19\logback-classic-1.5.19.jar;C:\Users\None\.m2\repository\ch\qos\logback\logback-core\1.5.19\logback-core-1.5.19.jar;C:\Users\None\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\None\.m2\repository\org\postgresql\postgresql\42.7.3\postgresql-42.7.3.jar;C:\Users\None\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\None\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\None\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\None\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\None\.m2\repository\org\mindrot\jbcrypt\0.4\jbcrypt-0.4.jar;C:\Users\None\.m2\repository\jakarta\servlet\jakarta.servlet-api\5.0.0\jakarta.servlet-api-5.0.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\None"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="C:\Users\None\.jdks\temurin-17.0.17"/>
+    <property name="file.separator" value="\"/>
+    <property name="style.color" value="always"/>
+    <property name="basedir" value="C:\Users\None\IdeaProjects\laba_konev"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\None\AppData\Local\Temp\surefire8367539666590487196\surefirebooter-20260107024116945_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.17+10"/>
+    <property name="user.name" value="None"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.17+10"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2.1\plugins\maven\lib\maven-event-listener.jar"/>
+    <property name="localRepository" value="C:\Users\None\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\None\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2025.2.1"/>
+    <property name="java.version" value="17.0.17"/>
+    <property name="user.dir" value="C:\Users\None\IdeaProjects\laba_konev"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="jansi.passthrough" value="true"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="C:\Users\None\.jdks\temurin-17.0.17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\None\AppData\Roaming\Python\Scripts;%PyCharm Community Edition%;C:\Users\None\AppData\Local\Programs\Python\Python313\;C:\Users\None\AppData\Local\Programs\Python\Python313\Scripts\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;&quot;D:\MyProgs\JAVA;D:\MyProgs\JAVA\bin;D:\MyProgs\JAVA\bin\jar.exe&quot;;C:\Program Files\Docker\Docker\resources\bin;D:\node\;C:\Users\None\Documents\maven;C:\Users\None\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\None\AppData\Local\Programs\Python\Python312\;C:\Users\None\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\None\AppData\Local\Programs\Python\Python313\;C:\Users\None\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2025.1.3.1\bin;;D:\MyProgs\cursor\resources\app\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2.1\bin;C:\Program Files\JetBrains\PyCharm 2025.2.2\bin;C:\Users\None\PycharmProjects\satvision-qt6\venv\Lib\site-packages\PyQt6;C:\Users\None\AppData\Roaming\npm;C:\Users\None\Documents\maven-mvnd-1.0.3-windows-amd64;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.17+10"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="maven.repo.local" value="C:\Users\None\.m2\repository"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testFindByFunctionId" classname="repository.PointRepositoryTest" time="0.575">
+    <system-out><![CDATA[02:41:21.930 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.952 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.973 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.976 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739281976_1
+02:41:21.997 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.997 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:21.999 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:21.999 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f1
+02:41:22.018 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.019 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:22.020 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3619 (saved as whole, not point by point)
+02:41:22.020 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f2
+02:41:22.040 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.040 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:22.042 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3620 (saved as whole, not point by point)
+02:41:22.042 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3619
+02:41:22.063 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.063 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:22.064 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:22.064 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3619
+02:41:22.084 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.084 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:22.085 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:22.085 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3619
+02:41:22.105 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.105 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:22.106 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:22.107 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3620
+02:41:22.127 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.127 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:22.128 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:22.128 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3620
+02:41:22.260 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.260 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:22.262 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:22.262 [main] INFO  JDBC.repository.PointRepository - Start of operation: obtaining points for the ID function 3619
+02:41:22.283 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.283 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/select_all_points.sql
+02:41:22.284 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:22.284 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:22.284 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:22.284 [main] INFO  JDBC.repository.PointRepository - The operation is complete: 3 points have been found for the function 3619
+02:41:22.284 [main] INFO  JDBC.repository.PointRepository - Start of operation: obtaining points for the ID function 3620
+02:41:22.305 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.305 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/select_all_points.sql
+02:41:22.306 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:22.306 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:22.306 [main] INFO  JDBC.repository.PointRepository - The operation is complete: 2 points have been found for the function 3620
+02:41:22.328 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.349 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.371 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteNonExistent" classname="repository.PointRepositoryTest" time="0.434">
+    <system-out><![CDATA[02:41:22.394 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.417 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.438 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.441 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739282441_1
+02:41:22.461 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.461 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:22.462 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:22.462 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f1
+02:41:22.482 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.483 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:22.484 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3621 (saved as whole, not point by point)
+02:41:22.484 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f2
+02:41:22.503 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.503 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:22.505 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3622 (saved as whole, not point by point)
+02:41:22.505 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3621
+02:41:22.524 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.525 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:22.526 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:22.526 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3621
+02:41:22.545 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.545 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:22.546 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:22.547 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3621
+02:41:22.566 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.566 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:22.567 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:22.567 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3622
+02:41:22.587 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.587 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:22.588 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:22.588 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3622
+02:41:22.609 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.609 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:22.610 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:22.611 [main] INFO  JDBC.repository.PointRepository - Start of operation: deleting the point of function 999 with X=999.0
+02:41:22.737 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.738 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/delete_point.sql
+02:41:22.739 [main] INFO  JDBC.repository.PointRepository - Operation completed: point not  has been deleted
+02:41:22.760 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.781 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.805 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testFindAllSortedByX" classname="repository.PointRepositoryTest" time="0.619">
+    <system-out><![CDATA[02:41:22.936 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.957 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.978 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:22.980 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739282980_1
+02:41:23.000 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.000 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:23.001 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:23.001 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f1
+02:41:23.021 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.021 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:23.023 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3623 (saved as whole, not point by point)
+02:41:23.023 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f2
+02:41:23.043 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.043 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:23.045 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3624 (saved as whole, not point by point)
+02:41:23.045 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3623
+02:41:23.066 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.066 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.067 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.067 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3623
+02:41:23.088 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.088 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.089 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.089 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3623
+02:41:23.110 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.110 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.111 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.111 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3624
+02:41:23.130 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.131 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.132 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.132 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3624
+02:41:23.151 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.151 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.152 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.171 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.172 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3623
+02:41:23.295 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.295 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.297 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.297 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3623
+02:41:23.317 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.317 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.319 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.319 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3623
+02:41:23.339 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.340 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.341 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.341 [main] INFO  JDBC.repository.PointRepository - Search for points sorted by x_value
+02:41:23.361 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.362 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/select_points_sorted_x.sql
+02:41:23.362 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:23.362 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:23.362 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:23.363 [main] INFO  JDBC.repository.PointRepository - Found 3 sorted points
+02:41:23.383 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.404 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.425 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testFindAllSortedByY" classname="repository.PointRepositoryTest" time="0.407">
+    <system-out><![CDATA[02:41:23.448 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.469 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.489 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.492 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739283492_1
+02:41:23.512 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.512 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:23.513 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:23.513 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f1
+02:41:23.533 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.534 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:23.535 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3625 (saved as whole, not point by point)
+02:41:23.535 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f2
+02:41:23.556 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.556 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:23.558 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3626 (saved as whole, not point by point)
+02:41:23.558 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3625
+02:41:23.578 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.578 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.580 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.580 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3625
+02:41:23.599 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.599 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.600 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.601 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3625
+02:41:23.621 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.621 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.622 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.622 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3626
+02:41:23.641 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.641 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.642 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.642 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3626
+02:41:23.661 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.662 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.663 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.684 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.685 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3625
+02:41:23.705 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.705 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.706 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.706 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3625
+02:41:23.726 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.726 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.727 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.728 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3625
+02:41:23.748 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.748 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.749 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.749 [main] INFO  JDBC.repository.PointRepository - Search for points sorted by y_value
+02:41:23.769 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.769 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/select_points_sorted_y.sql
+02:41:23.770 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:23.770 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:23.770 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:23.770 [main] INFO  JDBC.repository.PointRepository - Found 3 points sorted by Y
+02:41:23.790 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.811 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.832 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testFindByFunctionIdEmpty" classname="repository.PointRepositoryTest" time="0.423">
+    <system-out><![CDATA[02:41:23.855 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.876 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.896 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.899 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739283899_1
+02:41:23.919 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.919 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:23.920 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:23.920 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f1
+02:41:23.940 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.940 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:23.941 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3627 (saved as whole, not point by point)
+02:41:23.941 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f2
+02:41:23.961 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.961 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:23.963 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3628 (saved as whole, not point by point)
+02:41:23.963 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3627
+02:41:23.982 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:23.983 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:23.984 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:23.984 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3627
+02:41:24.003 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.004 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:24.005 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:24.005 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3627
+02:41:24.024 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.024 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:24.025 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:24.026 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3628
+02:41:24.045 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.045 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:24.046 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:24.046 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3628
+02:41:24.065 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.065 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:24.066 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:24.066 [main] INFO  JDBC.repository.PointRepository - Start of operation: obtaining points for the ID function 999
+02:41:24.085 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.085 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/select_all_points.sql
+02:41:24.086 [main] INFO  JDBC.repository.PointRepository - The operation is complete: 0 points have been found for the function 999
+02:41:24.211 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.233 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.255 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testDelete" classname="repository.PointRepositoryTest" time="0.7">
+    <system-out><![CDATA[02:41:24.279 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.415 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.552 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.554 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739284554_1
+02:41:24.574 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.574 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:24.575 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:24.575 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f1
+02:41:24.595 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.596 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:24.597 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3629 (saved as whole, not point by point)
+02:41:24.597 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f2
+02:41:24.617 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.618 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:24.619 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3630 (saved as whole, not point by point)
+02:41:24.619 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3629
+02:41:24.637 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.637 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:24.638 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:24.639 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3629
+02:41:24.658 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.658 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:24.659 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:24.659 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3629
+02:41:24.679 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.679 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:24.680 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:24.680 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3630
+02:41:24.700 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.700 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:24.701 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:24.701 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3630
+02:41:24.721 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.721 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:24.723 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:24.723 [main] INFO  JDBC.repository.PointRepository - Start of operation: deleting the point of function 3629 with X=2.0
+02:41:24.742 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.742 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/delete_point.sql
+02:41:24.743 [main] INFO  JDBC.repository.PointRepository - Operation completed: point  has been deleted
+02:41:24.743 [main] INFO  JDBC.repository.PointRepository - Starting the operation: finding the point of the function 3629 with X=2.0
+02:41:24.762 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.763 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/select_point.sql
+02:41:24.763 [main] INFO  JDBC.repository.PointRepository - Operation completed: point not found
+02:41:24.763 [main] INFO  JDBC.repository.PointRepository - Start of operation: obtaining points for the ID function 3629
+02:41:24.784 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.785 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/select_all_points.sql
+02:41:24.785 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:24.785 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:24.785 [main] INFO  JDBC.repository.PointRepository - The operation is complete: 2 points have been found for the function 3629
+02:41:24.805 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.827 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:24.956 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testFindByFunctionIdAndXNonExistent" classname="repository.PointRepositoryTest" time="0.347">
+    <system-out><![CDATA[02:41:24.980 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.001 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.022 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.025 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739285025_1
+02:41:25.045 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.045 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:25.046 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:25.046 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f1
+02:41:25.066 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.066 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:25.068 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3631 (saved as whole, not point by point)
+02:41:25.069 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f2
+02:41:25.088 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.089 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:25.090 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3632 (saved as whole, not point by point)
+02:41:25.090 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3631
+02:41:25.110 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.110 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:25.111 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:25.111 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3631
+02:41:25.132 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.133 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:25.134 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:25.134 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3631
+02:41:25.153 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.153 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:25.154 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:25.154 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3632
+02:41:25.174 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.174 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:25.175 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:25.175 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3632
+02:41:25.194 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.195 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:25.196 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:25.196 [main] INFO  JDBC.repository.PointRepository - Starting the operation: finding the point of the function 3631 with X=999.0
+02:41:25.216 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.217 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/select_point.sql
+02:41:25.217 [main] INFO  JDBC.repository.PointRepository - Operation completed: point not found
+02:41:25.217 [main] INFO  JDBC.repository.PointRepository - Starting the operation: finding the point of the function 999 with X=1.0
+02:41:25.238 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.238 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/select_point.sql
+02:41:25.239 [main] INFO  JDBC.repository.PointRepository - Operation completed: point not found
+02:41:25.260 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.281 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.302 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testFindByFunctionIdAndX" classname="repository.PointRepositoryTest" time="0.553">
+    <system-out><![CDATA[02:41:25.326 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.462 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.484 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.487 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739285487_1
+02:41:25.507 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.507 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:25.508 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:25.508 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f1
+02:41:25.528 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.528 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:25.529 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3633 (saved as whole, not point by point)
+02:41:25.529 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f2
+02:41:25.664 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.664 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:25.666 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3634 (saved as whole, not point by point)
+02:41:25.666 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3633
+02:41:25.687 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.688 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:25.689 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:25.689 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3633
+02:41:25.709 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.710 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:25.711 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:25.711 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3633
+02:41:25.732 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.732 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:25.733 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:25.733 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3634
+02:41:25.753 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.753 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:25.755 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:25.755 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3634
+02:41:25.774 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.775 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:25.776 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:25.776 [main] INFO  JDBC.repository.PointRepository - Starting the operation: finding the point of the function 3633 with X=2.0
+02:41:25.795 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.795 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/select_point.sql
+02:41:25.796 [main] INFO  JDBC.repository.PointRepository - Operation completed: the point has been found
+02:41:25.796 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:25.815 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.835 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.856 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateNonExistent" classname="repository.PointRepositoryTest" time="0.535">
+    <system-out><![CDATA[02:41:25.878 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.898 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.918 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.920 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739285920_1
+02:41:25.940 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.940 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:25.941 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:25.941 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f1
+02:41:25.960 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.960 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:25.961 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3635 (saved as whole, not point by point)
+02:41:25.961 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f2
+02:41:25.981 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:25.982 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:25.983 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3636 (saved as whole, not point by point)
+02:41:25.983 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3635
+02:41:26.105 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.105 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:26.106 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:26.106 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3635
+02:41:26.127 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.127 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:26.129 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:26.129 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3635
+02:41:26.261 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.261 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:26.262 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:26.263 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3636
+02:41:26.283 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.283 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:26.285 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:26.285 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3636
+02:41:26.305 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.305 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:26.306 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:26.307 [main] INFO  JDBC.repository.PointRepository - Starting the operation: updating the function point 999 with X=999.0
+02:41:26.327 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.327 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/update_point.sql
+02:41:26.328 [main] INFO  JDBC.repository.PointRepository - Operation completed: point not  updated
+02:41:26.348 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.369 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.391 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testInsert" classname="repository.PointRepositoryTest" time="0.668">
+    <system-out><![CDATA[02:41:26.414 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.436 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.456 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.459 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739286459_1
+02:41:26.591 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.591 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:26.593 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:26.593 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f1
+02:41:26.613 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.613 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:26.615 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3637 (saved as whole, not point by point)
+02:41:26.615 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f2
+02:41:26.635 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.635 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:26.636 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3638 (saved as whole, not point by point)
+02:41:26.636 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3637
+02:41:26.657 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.657 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:26.659 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:26.659 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3637
+02:41:26.678 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.678 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:26.680 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:26.680 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3637
+02:41:26.699 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.699 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:26.700 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:26.700 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3638
+02:41:26.827 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.828 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:26.829 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:26.829 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3638
+02:41:26.851 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.851 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:26.852 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:26.852 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3637
+02:41:26.872 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.873 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:26.874 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:26.874 [main] INFO  JDBC.repository.PointRepository - Start of operation: obtaining points for the ID function 3637
+02:41:26.894 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:26.894 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/select_all_points.sql
+02:41:26.895 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:26.895 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:26.895 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:26.895 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:26.895 [main] INFO  JDBC.repository.PointRepository - The operation is complete: 4 points have been found for the function 3637
+02:41:27.015 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.038 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.060 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdate" classname="repository.PointRepositoryTest" time="0.585">
+    <system-out><![CDATA[02:41:27.084 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.105 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.125 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.128 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739287128_1
+02:41:27.148 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.148 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:27.149 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:27.149 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f1
+02:41:27.172 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.172 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:27.174 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3639 (saved as whole, not point by point)
+02:41:27.174 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function f2
+02:41:27.194 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.194 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:27.195 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3640 (saved as whole, not point by point)
+02:41:27.195 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3639
+02:41:27.329 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.329 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:27.331 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:27.331 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3639
+02:41:27.454 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.454 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:27.456 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:27.456 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3639
+02:41:27.476 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.476 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:27.477 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:27.477 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3640
+02:41:27.496 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.496 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:27.497 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:27.498 [main] INFO  JDBC.repository.PointRepository - Starting the operation: adding a point for the ID function 3640
+02:41:27.519 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.519 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/insert_point.sql
+02:41:27.520 [main] INFO  JDBC.repository.PointRepository - The operation is completed: the point has been added
+02:41:27.520 [main] INFO  JDBC.repository.PointRepository - Starting the operation: finding the point of the function 3639 with X=2.0
+02:41:27.540 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.540 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/select_point.sql
+02:41:27.540 [main] INFO  JDBC.repository.PointRepository - Operation completed: the point has been found
+02:41:27.540 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:27.541 [main] INFO  JDBC.repository.PointRepository - Starting the operation: updating the function point 3639 with X=2.0
+02:41:27.562 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.562 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/update_point.sql
+02:41:27.563 [main] INFO  JDBC.repository.PointRepository - Operation completed: point  updated
+02:41:27.563 [main] INFO  JDBC.repository.PointRepository - Starting the operation: finding the point of the function 3639 with X=2.0
+02:41:27.584 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.584 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/points/select_point.sql
+02:41:27.584 [main] INFO  JDBC.repository.PointRepository - Operation completed: the point has been found
+02:41:27.585 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Point DTO
+02:41:27.604 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.624 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:27.645 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+</testsuite>

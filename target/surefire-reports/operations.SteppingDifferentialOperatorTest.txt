@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: operations.SteppingDifferentialOperatorTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in operations.SteppingDifferentialOperatorTest

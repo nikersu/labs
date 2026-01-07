@@ -9,5 +9,3 @@ public class CosFunction implements MathFunction {
 }
 
 
-
-

@@ -40,19 +40,42 @@ const FunctionEditForm: React.FC = () => {
   }
 
   useEffect(() => {
-    if (id) {
-      loadFunction()
+    const loadData = async () => {
+      // Сначала загружаем список доступных функций
+      await loadAvailableMathFunctions()
+      // Затем загружаем саму функцию (чтобы правильно установить selectedMathFunction)
+      if (id) {
+        await loadFunction()
+      }
     }
-    loadAvailableMathFunctions()
+    loadData()
   }, [id])
+
+  // Слушаем событие создания новой компонентной функции для обновления списка
+  useEffect(() => {
+    const handleCompositeFunctionCreated = () => {
+      loadAvailableMathFunctions()
+    }
+    window.addEventListener('compositeFunctionCreated', handleCompositeFunctionCreated)
+
+    // Обновляем список при фокусе на окне
+    const handleFocus = () => {
+      loadAvailableMathFunctions()
+    }
+    window.addEventListener('focus', handleFocus)
+
+    return () => {
+      window.removeEventListener('compositeFunctionCreated', handleCompositeFunctionCreated)
+      window.removeEventListener('focus', handleFocus)
+    }
+  }, [])
 
   const loadAvailableMathFunctions = async () => {
     try {
       const functions = await functionService.getAvailableMathFunctions()
       setAvailableMathFunctions(functions)
-      if (functions.length > 0 && !selectedMathFunction) {
-        setSelectedMathFunction(functions[0])
-      }
+      // Не устанавливаем значение по умолчанию здесь, так как loadFunction установит правильное значение
+      // Значение по умолчанию нужно только при создании новой функции
     } catch (error) {
       console.error('Ошибка загрузки математических функций:', error)
     }
@@ -63,6 +86,11 @@ const FunctionEditForm: React.FC = () => {
 
     setIsLoading(true)
     try {
+      // Сначала убедимся, что список доступных функций загружен
+      if (availableMathFunctions.length === 0) {
+        await loadAvailableMathFunctions()
+      }
+      
       const func = await functionService.getById(parseInt(id))
       setFunctionData(func)
       setName(func.name)
@@ -84,16 +112,56 @@ const FunctionEditForm: React.FC = () => {
 
       // Если это математическая функция, пытаемся извлечь параметры из expression
       if (!isTabulated && func.expression) {
-        // Формат: FunctionType[xFrom,xTo,count] или CUSTOM:expression[xFrom,xTo,count]
-        const match = func.expression.match(/(.+?)\[([\d.-]+),([\d.-]+),(\d+)\]/)
-        if (match) {
-          setMathFromX(parseFloat(match[2]))
-          setMathToX(parseFloat(match[3]))
-          setMathPointCount(parseInt(match[4]))
-          // Пытаемся определить тип математической функции
-          const funcType = match[1].replace('CUSTOM:', '')
-          if (availableMathFunctions.includes(funcType)) {
-            setSelectedMathFunction(funcType)
+        // Формат: FunctionType[xFrom,xTo,count] или компонентная функция с " ∘ "
+        if (func.expression.includes(" ∘ ")) {
+          // Это компонентная функция - имя функции = имя компонентной функции
+          const funcName = func.name
+          // Получаем актуальный список функций на случай, если он еще не загружен
+          const currentAvailableFunctions = availableMathFunctions.length > 0 
+            ? availableMathFunctions 
+            : await functionService.getAvailableMathFunctions()
+          
+          if (currentAvailableFunctions.includes(funcName)) {
+            setSelectedMathFunction(funcName)
+          }
+          // Для компонентных функций параметры могут быть в другом формате или отсутствовать
+          // Пытаемся извлечь из expression, если есть формат [xFrom,xTo,count]
+          const match = func.expression.match(/\[([\d.-]+),([\d.-]+),(\d+)\]/)
+          if (match) {
+            setMathFromX(parseFloat(match[1]))
+            setMathToX(parseFloat(match[2]))
+            setMathPointCount(parseInt(match[3]))
+          }
+        } else {
+          // Обычная математическая функция
+          // Улучшенное регулярное выражение для извлечения типа функции и параметров
+          // Формат: FunctionType[xFrom,xTo,count] или FunctionType [xFrom,xTo,count]
+          const match = func.expression.match(/^(.+?)\s*\[\s*([\d.-]+)\s*,\s*([\d.-]+)\s*,\s*(\d+)\s*\]$/)
+          if (match) {
+            setMathFromX(parseFloat(match[2]))
+            setMathToX(parseFloat(match[3]))
+            setMathPointCount(parseInt(match[4]))
+            // Пытаемся определить тип математической функции
+            const funcType = match[1].trim()
+            
+            // Получаем актуальный список функций на случай, если он еще не загружен
+            const currentAvailableFunctions = availableMathFunctions.length > 0 
+              ? availableMathFunctions 
+              : await functionService.getAvailableMathFunctions()
+            
+            if (currentAvailableFunctions.includes(funcType)) {
+              setSelectedMathFunction(funcType)
+            } else {
+              // Если функция не найдена в списке, устанавливаем первую доступную как fallback
+              // но логируем предупреждение
+              console.warn(`Функция ${funcType} не найдена в списке доступных функций. Expression: ${func.expression}`)
+              if (currentAvailableFunctions.length > 0) {
+                setSelectedMathFunction(currentAvailableFunctions[0])
+              }
+            }
+          } else {
+            // Если не удалось распарсить expression, логируем для отладки
+            console.warn(`Не удалось распарсить expression: ${func.expression}`)
           }
         }
       }
@@ -214,18 +282,68 @@ const FunctionEditForm: React.FC = () => {
           setFunctionData(updated)
           showSuccess('Название функции обновлено')
         } else {
-          // Обновляем математическую функцию - пересоздаем с новыми параметрами
-          await functionService.delete(functionData.id)
-          await functionService.createFromMath({
-            name,
-            mathFunctionType: selectedMathFunction,
-            xFrom: mathFromX,
-            xTo: mathToX,
-            count: mathPointCount,
-            factoryType,
-          })
-          showSuccess('Функция успешно обновлена')
-          navigate('/functions')
+          // Обновляем математическую функцию
+          // Проверяем, изменились ли параметры (кроме имени)
+          const oldExpression = functionData.expression || ''
+          const oldMatch = oldExpression.match(/(.+?)\[([\d.-]+),([\d.-]+),(\d+)\]/)
+          const paramsChanged = !oldMatch || 
+            parseFloat(oldMatch[2]) !== mathFromX ||
+            parseFloat(oldMatch[3]) !== mathToX ||
+            parseInt(oldMatch[4]) !== mathPointCount ||
+            oldMatch[1] !== selectedMathFunction
+          
+          if (!paramsChanged && name === functionData.name) {
+            // Ничего не изменилось
+            showSuccess('Изменений не обнаружено')
+            return
+          }
+          
+          if (!paramsChanged) {
+            // Изменилось только имя - просто обновляем имя и expression
+            const newExpression = `${selectedMathFunction}[${mathFromX},${mathToX},${mathPointCount}]`
+            const updatedFunction: FunctionDto = {
+              ...functionData,
+              name,
+              expression: newExpression,
+              userId: functionData.userId,
+            }
+            await functionService.update(functionData.id, updatedFunction)
+            const updated = await functionService.getById(functionData.id)
+            setFunctionData(updated)
+            showSuccess('Название функции обновлено')
+          } else {
+            // Параметры изменились - обновляем существующую функцию
+            // ВАЖНО: Используем оригинальное имя для поиска функции в createFromMath
+            // чтобы backend нашел существующую функцию и обновил её, а не создал новую
+            const originalName = functionData.name
+            
+            // Пересоздаем точки через createFromMath (он обновит существующую функцию по оригинальному имени)
+            const updated = await functionService.createFromMath({
+              name: originalName, // Используем оригинальное имя для поиска существующей функции
+              mathFunctionType: selectedMathFunction,
+              xFrom: mathFromX,
+              xTo: mathToX,
+              count: mathPointCount,
+              factoryType,
+            })
+            
+            // Если имя изменилось, обновляем его отдельно
+            if (name !== originalName) {
+              const updatedFunction: FunctionDto = {
+                ...updated,
+                name,
+                userId: updated.userId,
+              }
+              await functionService.update(updated.id, updatedFunction)
+              // Загружаем обновленную функцию
+              const finalUpdated = await functionService.getById(updated.id)
+              setFunctionData(finalUpdated)
+            } else {
+              setFunctionData(updated)
+            }
+            
+            showSuccess('Функция успешно обновлена')
+          }
         }
       }
 

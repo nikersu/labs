@@ -1,0 +1,1 @@
+UPDATE functions SET name = ?, expression = ?, user_id = ?, x_values = ?, y_values = ?, count = ? WHERE id = ?;

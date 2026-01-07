@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useAuth } from '../../context/AuthContext'
 import { useNotification } from '../common/NotificationContext'
 import { functionService } from '../../services/functionService'
-import { FunctionDto } from '../../types'
 import { extractErrorMessage } from '../../utils/errorHandler'
 
 interface CompositeModalProps {
@@ -22,7 +21,7 @@ const CompositeModal: React.FC<CompositeModalProps> = ({ onClose, onSuccess }) =
   const [xTo, setXTo] = useState('10')
   const [count, setCount] = useState('11')
   const [factoryType, setFactoryType] = useState('ARRAY')
-  const [createdFunction, setCreatedFunction] = useState<FunctionDto | null>(null)
+  const [createdFunction, setCreatedFunction] = useState<any>(null)
 
   // Маппинг английских названий на русские
   const mathFunctionNames: Record<string, string> = {
@@ -85,14 +84,14 @@ const CompositeModal: React.FC<CompositeModalProps> = ({ onClose, onSuccess }) =
 
     setLoading(true)
     try {
-      // Создаём составную функцию - она будет добавлена в список доступных функций с именем name
+      // Создаём компонентную функцию (метаданные) - она будет добавлена в список доступных функций
       await functionService.createCompositeFunction(name, innerFunction, outerFunction)
       
-      // Теперь создаём табулированную функцию из составной
-      // Используем имя составной функции как mathFunctionType
+      // Теперь создаём табулированную функцию из компонентной
+      // Используем имя компонентной функции как mathFunctionType
       const created = await functionService.createFromMath({
         name,
-        mathFunctionType: name, // имя составной функции, которое было добавлено в CUSTOM_COMPOSITE_FUNCTIONS
+        mathFunctionType: name, // имя компонентной функции
         xFrom: xFromNum,
         xTo: xToNum,
         count: countNum,
@@ -101,6 +100,10 @@ const CompositeModal: React.FC<CompositeModalProps> = ({ onClose, onSuccess }) =
 
       setCreatedFunction(created)
       await loadAvailableFunctions() // Обновляем список доступных функций
+      
+      // Отправляем событие для обновления списка функций в других компонентах
+      window.dispatchEvent(new CustomEvent('compositeFunctionCreated'))
+      
       showSuccess('Составная функция создана')
     } catch (error) {
       showError(extractErrorMessage(error))

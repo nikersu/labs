@@ -61,6 +61,23 @@ const FunctionForm: React.FC<FunctionFormProps> = ({ onSuccess, onCancel }) => {
       }
     }
     loadMathFunctions()
+
+    // Слушаем событие создания новой компонентной функции
+    const handleCompositeFunctionCreated = () => {
+      loadMathFunctions()
+    }
+    window.addEventListener('compositeFunctionCreated', handleCompositeFunctionCreated)
+
+    // Обновляем список при фокусе на окне (на случай, если пользователь переключился между вкладками)
+    const handleFocus = () => {
+      loadMathFunctions()
+    }
+    window.addEventListener('focus', handleFocus)
+
+    return () => {
+      window.removeEventListener('compositeFunctionCreated', handleCompositeFunctionCreated)
+      window.removeEventListener('focus', handleFocus)
+    }
   }, [])
 
   const handleTypeChange = (type: FunctionType) => {
@@ -354,11 +371,15 @@ const FunctionForm: React.FC<FunctionFormProps> = ({ onSuccess, onCancel }) => {
                 }`}
                 required
               >
-                {availableMathFunctions.map((func) => (
-                  <option key={func} value={func}>
-                    {mathFunctionNames[func] || func}
-                  </option>
-                ))}
+                {availableMathFunctions.map((func) => {
+                  // Если это компонентная функция (не в стандартном списке), показываем её имя
+                  const displayName = mathFunctionNames[func] || func
+                  return (
+                    <option key={func} value={func}>
+                      {displayName}
+                    </option>
+                  )
+                })}
               </select>
               {errors.mathFunction && <p className="mt-1 text-sm text-red-500">{errors.mathFunction}</p>}
             </div>

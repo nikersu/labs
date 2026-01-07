@@ -8,13 +8,17 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Утилита для сериализации/десериализации данных функций в JSON.
+ * Позволяет сохранять функции целиком, а не поточечно.
+ */
 public class FunctionDataSerializer {
     
     private static final Logger logger = LoggerFactory.getLogger(FunctionDataSerializer.class);
     private static final ObjectMapper objectMapper = new ObjectMapper();
     
     /**
-     * Serializes double array to JSON string
+     * Сериализует массив double в JSON строку
      */
     public static String serializeArray(double[] array) {
         if (array == null || array.length == 0) {
@@ -27,13 +31,13 @@ public class FunctionDataSerializer {
             }
             return objectMapper.writeValueAsString(list);
         } catch (Exception e) {
-            logger.error("Error serializing array to JSON", e);
-            throw new RuntimeException("Failed to serialize array to JSON", e);
+            logger.error("Ошибка при сериализации массива в JSON", e);
+            throw new RuntimeException("Не удалось сериализовать массив в JSON", e);
         }
     }
     
     /**
-     * Deserializes JSON string to double array
+     * Десериализует JSON строку в массив double
      */
     public static double[] deserializeArray(String json) {
         if (json == null || json.trim().isEmpty() || json.equals("[]")) {
@@ -47,13 +51,14 @@ public class FunctionDataSerializer {
             }
             return array;
         } catch (Exception e) {
-            logger.error("Error deserializing JSON to array: {}", json, e);
-            throw new RuntimeException("Failed to deserialize JSON to array", e);
+            logger.error("Ошибка при десериализации JSON в массив: {}", json, e);
+            throw new RuntimeException("Не удалось десериализовать JSON в массив", e);
         }
     }
     
     /**
-     * Serializes two arrays (x and y values) to JSON strings
+     * Сериализует два массива (x и y значения) в JSON строки
+     * @return массив из двух строк: [xValuesJson, yValuesJson]
      */
     public static String[] serializeFunctionData(double[] xValues, double[] yValues) {
         return new String[]{

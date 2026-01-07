@@ -9,5 +9,3 @@ public class ExpFunction implements MathFunction {
 }
 
 
-
-

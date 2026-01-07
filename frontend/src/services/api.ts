@@ -1,6 +1,7 @@
 import axios, { AxiosError, AxiosInstance, InternalAxiosRequestConfig } from 'axios'
 
-const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || 'http://localhost:8080/api'
+// Используем относительный путь для работы через прокси Vite
+const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || '/api'
 
 export const api: AxiosInstance = axios.create({
   baseURL: API_BASE_URL,

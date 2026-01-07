@@ -17,8 +17,8 @@ fi
 
 # Проверка наличия файлов
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-COLLECTION_FILE="${SCRIPT_DIR}/LabsOOP.postman_collection.json"
-ENVIRONMENT_FILE="${SCRIPT_DIR}/LabsOOP.postman_environment.json"
+COLLECTION_FILE="${SCRIPT_DIR}/collections/LabsOOP.postman_collection.json"
+ENVIRONMENT_FILE="${SCRIPT_DIR}/environments/LabsOOP.postman_environment.json"
 
 if [ ! -f "$COLLECTION_FILE" ]; then
     echo "Ошибка: файл коллекции $COLLECTION_FILE не найден"
@@ -52,6 +52,5 @@ else
 fi
 
 exit $EXIT_CODE
-
 
 

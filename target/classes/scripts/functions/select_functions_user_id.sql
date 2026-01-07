@@ -1,0 +1,1 @@
+SELECT id, name, expression, user_id, x_values, y_values, count FROM functions WHERE user_id = ?;

@@ -42,19 +42,24 @@
     <connection id="63120a17-c1cd-4d6a-ad6a-4ebf5d3e5a2b" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="63120a17-c1cd-4d6a-ad6a-4ebf5d3e5a2b" dataset="public.users" active-filter-id="" />
     <filter-actions connection-id="63120a17-c1cd-4d6a-ad6a-4ebf5d3e5a2b" dataset="public.functions" active-filter-id="" />
+    <filter-actions connection-id="63120a17-c1cd-4d6a-ad6a-4ebf5d3e5a2b" dataset="public.points" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/scripts/create_functions_table.sql" connection-id="63120a17-c1cd-4d6a-ad6a-4ebf5d3e5a2b" session-id="MAIN" current-schema="public" />
-    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/scripts/create_users_table.sql" connection-id="63120a17-c1cd-4d6a-ad6a-4ebf5d3e5a2b" session-id="MAIN" current-schema="public" />
-    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/scripts/create_points_table.sql" connection-id="63120a17-c1cd-4d6a-ad6a-4ebf5d3e5a2b" session-id="MAIN" current-schema="public" />
+    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/scripts/users/create_users_table.sql" connection-id="63120a17-c1cd-4d6a-ad6a-4ebf5d3e5a2b" session-id="MAIN" current-schema="public" />
+    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/scripts/functions/create_functions_table.sql" connection-id="63120a17-c1cd-4d6a-ad6a-4ebf5d3e5a2b" session-id="MAIN" current-schema="public" />
+    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/scripts/points/create_points_table.sql" connection-id="63120a17-c1cd-4d6a-ad6a-4ebf5d3e5a2b" session-id="MAIN" current-schema="public" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
+  </component>
+  <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
+    <recently-used-interfaces />
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>

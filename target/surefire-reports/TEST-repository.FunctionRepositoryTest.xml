@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="repository.FunctionRepositoryTest" time="4.08" tests="11" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.class.path" value="C:\Users\None\IdeaProjects\laba_konev\target\test-classes;C:\Users\None\IdeaProjects\laba_konev\target\classes;C:\Users\None\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\None\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\None\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\None\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite\1.8.1\junit-platform-suite-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite-api\1.8.1\junit-platform-suite-api-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite-engine\1.8.1\junit-platform-suite-engine-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.8.1\junit-platform-suite-commons-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-launcher\1.8.1\junit-platform-launcher-1.8.1.jar;C:\Users\None\.m2\repository\ch\qos\logback\logback-classic\1.5.19\logback-classic-1.5.19.jar;C:\Users\None\.m2\repository\ch\qos\logback\logback-core\1.5.19\logback-core-1.5.19.jar;C:\Users\None\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\None\.m2\repository\org\postgresql\postgresql\42.7.3\postgresql-42.7.3.jar;C:\Users\None\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\None\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\None\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\None\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\None\.m2\repository\org\mindrot\jbcrypt\0.4\jbcrypt-0.4.jar;C:\Users\None\.m2\repository\jakarta\servlet\jakarta.servlet-api\5.0.0\jakarta.servlet-api-5.0.0.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Europe/Samara"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Users\None\.jdks\temurin-17.0.17\bin"/>
+    <property name="sun.java.command" value="C:\Users\None\AppData\Local\Temp\surefire8367539666590487196\surefirebooter-20260107024116945_3.jar C:\Users\None\AppData\Local\Temp\surefire8367539666590487196 2026-01-07T02-41-16_728-jvmRun1 surefire-20260107024116945_1tmp surefire_0-20260107024116945_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\None\IdeaProjects\laba_konev\target\test-classes;C:\Users\None\IdeaProjects\laba_konev\target\classes;C:\Users\None\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\None\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\None\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\None\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite\1.8.1\junit-platform-suite-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite-api\1.8.1\junit-platform-suite-api-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite-engine\1.8.1\junit-platform-suite-engine-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.8.1\junit-platform-suite-commons-1.8.1.jar;C:\Users\None\.m2\repository\org\junit\platform\junit-platform-launcher\1.8.1\junit-platform-launcher-1.8.1.jar;C:\Users\None\.m2\repository\ch\qos\logback\logback-classic\1.5.19\logback-classic-1.5.19.jar;C:\Users\None\.m2\repository\ch\qos\logback\logback-core\1.5.19\logback-core-1.5.19.jar;C:\Users\None\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\None\.m2\repository\org\postgresql\postgresql\42.7.3\postgresql-42.7.3.jar;C:\Users\None\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\None\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\None\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\None\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\None\.m2\repository\org\mindrot\jbcrypt\0.4\jbcrypt-0.4.jar;C:\Users\None\.m2\repository\jakarta\servlet\jakarta.servlet-api\5.0.0\jakarta.servlet-api-5.0.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\None"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="C:\Users\None\.jdks\temurin-17.0.17"/>
+    <property name="file.separator" value="\"/>
+    <property name="style.color" value="always"/>
+    <property name="basedir" value="C:\Users\None\IdeaProjects\laba_konev"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\None\AppData\Local\Temp\surefire8367539666590487196\surefirebooter-20260107024116945_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.17+10"/>
+    <property name="user.name" value="None"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.17+10"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2.1\plugins\maven\lib\maven-event-listener.jar"/>
+    <property name="localRepository" value="C:\Users\None\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\None\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2025.2.1"/>
+    <property name="java.version" value="17.0.17"/>
+    <property name="user.dir" value="C:\Users\None\IdeaProjects\laba_konev"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="jansi.passthrough" value="true"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="C:\Users\None\.jdks\temurin-17.0.17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\None\AppData\Roaming\Python\Scripts;%PyCharm Community Edition%;C:\Users\None\AppData\Local\Programs\Python\Python313\;C:\Users\None\AppData\Local\Programs\Python\Python313\Scripts\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;&quot;D:\MyProgs\JAVA;D:\MyProgs\JAVA\bin;D:\MyProgs\JAVA\bin\jar.exe&quot;;C:\Program Files\Docker\Docker\resources\bin;D:\node\;C:\Users\None\Documents\maven;C:\Users\None\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\None\AppData\Local\Programs\Python\Python312\;C:\Users\None\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\None\AppData\Local\Programs\Python\Python313\;C:\Users\None\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2025.1.3.1\bin;;D:\MyProgs\cursor\resources\app\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2.1\bin;C:\Program Files\JetBrains\PyCharm 2025.2.2\bin;C:\Users\None\PycharmProjects\satvision-qt6\venv\Lib\site-packages\PyQt6;C:\Users\None\AppData\Roaming\npm;C:\Users\None\Documents\maven-mvnd-1.0.3-windows-amd64;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.17+10"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="maven.repo.local" value="C:\Users\None\.m2\repository"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testDeleteNonExistent" classname="repository.FunctionRepositoryTest" time="0.418">
+    <system-out><![CDATA[02:41:17.722 [main] INFO  J.r.database.DatabaseConnection - Loaded database properties from database.properties
+02:41:17.726 [main] INFO  J.r.database.DatabaseConnection - PostgreSQL driver registered successfully
+02:41:17.913 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:17.945 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:17.955 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739277951_1
+02:41:17.982 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:17.983 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:17.992 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:17.992 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user pop_1767739277951_1
+02:41:18.015 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.016 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:18.017 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 2
+02:41:18.017 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function sin(x)
+02:41:18.040 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.040 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:18.044 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3582 (saved as whole, not point by point)
+02:41:18.044 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function cos(x)
+02:41:18.067 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.067 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:18.069 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3583 (saved as whole, not point by point)
+02:41:18.069 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function x^2
+02:41:18.090 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.090 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:18.091 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3584 (saved as whole, not point by point)
+02:41:18.091 [main] INFO  JDBC.repository.FunctionRepository - Start of the operation: deleting the function from the ID 99999
+02:41:18.112 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.113 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/delete_function.sql
+02:41:18.114 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: the not  function has been deleted
+02:41:18.135 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testFindByUserId" classname="repository.FunctionRepositoryTest" time="0.444">
+    <system-out><![CDATA[02:41:18.157 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.179 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.182 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739278182_1
+02:41:18.304 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.304 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:18.306 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:18.306 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user pop_1767739278182_1
+02:41:18.327 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.328 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:18.329 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 2
+02:41:18.329 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function sin(x)
+02:41:18.351 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.351 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:18.353 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3585 (saved as whole, not point by point)
+02:41:18.353 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function cos(x)
+02:41:18.374 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.374 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:18.375 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3586 (saved as whole, not point by point)
+02:41:18.376 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function x^2
+02:41:18.510 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.510 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:18.513 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3587 (saved as whole, not point by point)
+02:41:18.513 [main] INFO  JDBC.repository.FunctionRepository - Search for functions by user_id: 1
+02:41:18.534 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.534 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/select_functions_user_id.sql
+02:41:18.535 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Function DTO
+02:41:18.535 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Function DTO
+02:41:18.536 [main] INFO  JDBC.repository.FunctionRepository - Found 2 functions for user ID 1
+02:41:18.536 [main] INFO  JDBC.repository.FunctionRepository - Search for functions by user_id: 999
+02:41:18.557 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.557 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/select_functions_user_id.sql
+02:41:18.558 [main] INFO  JDBC.repository.FunctionRepository - Found 0 functions for user ID 999
+02:41:18.579 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testFindAll" classname="repository.FunctionRepositoryTest" time="0.202">
+    <system-out><![CDATA[02:41:18.602 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.624 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.627 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739278627_1
+02:41:18.649 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.649 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:18.650 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:18.650 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user pop_1767739278627_1
+02:41:18.670 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.671 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:18.672 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 2
+02:41:18.672 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function sin(x)
+02:41:18.691 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.692 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:18.693 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3588 (saved as whole, not point by point)
+02:41:18.693 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function cos(x)
+02:41:18.713 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.713 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:18.714 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3589 (saved as whole, not point by point)
+02:41:18.714 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function x^2
+02:41:18.735 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.735 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:18.736 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3590 (saved as whole, not point by point)
+02:41:18.737 [main] INFO  JDBC.repository.FunctionRepository - Operation start: getting all the functions
+02:41:18.760 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.760 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/select_all_functions.sql
+02:41:18.761 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Function DTO
+02:41:18.761 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Function DTO
+02:41:18.761 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Function DTO
+02:41:18.761 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: 3 functions found
+02:41:18.782 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testFindAllSortedByName" classname="repository.FunctionRepositoryTest" time="0.513">
+    <system-out><![CDATA[02:41:18.805 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.827 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.830 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739278830_1
+02:41:18.850 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.851 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:18.852 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:18.852 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user pop_1767739278830_1
+02:41:18.873 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:18.873 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:18.875 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 2
+02:41:18.875 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function sin(x)
+02:41:19.013 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.013 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:19.015 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3591 (saved as whole, not point by point)
+02:41:19.015 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function cos(x)
+02:41:19.036 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.036 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:19.038 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3592 (saved as whole, not point by point)
+02:41:19.038 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function x^2
+02:41:19.058 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.059 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:19.060 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3593 (saved as whole, not point by point)
+02:41:19.183 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.185 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function cosine
+02:41:19.206 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.206 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:19.207 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3594 (saved as whole, not point by point)
+02:41:19.207 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function alpha
+02:41:19.227 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.228 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:19.229 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3595 (saved as whole, not point by point)
+02:41:19.229 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function beta
+02:41:19.251 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.251 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:19.252 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3596 (saved as whole, not point by point)
+02:41:19.252 [main] INFO  JDBC.repository.FunctionRepository - Search for functions sorted by name
+02:41:19.273 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.273 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/select_functions_sorted_name.sql
+02:41:19.274 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Function DTO
+02:41:19.274 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Function DTO
+02:41:19.274 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Function DTO
+02:41:19.274 [main] INFO  JDBC.repository.FunctionRepository - Found 3 sorted functions
+02:41:19.295 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testFindById" classname="repository.FunctionRepositoryTest" time="0.315">
+    <system-out><![CDATA[02:41:19.318 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.340 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.343 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739279343_1
+02:41:19.365 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.365 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:19.366 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:19.366 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user pop_1767739279343_1
+02:41:19.387 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.387 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:19.388 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 2
+02:41:19.388 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function sin(x)
+02:41:19.517 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.518 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:19.520 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3597 (saved as whole, not point by point)
+02:41:19.520 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function cos(x)
+02:41:19.541 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.541 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:19.543 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3598 (saved as whole, not point by point)
+02:41:19.543 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function x^2
+02:41:19.565 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.565 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:19.567 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3599 (saved as whole, not point by point)
+02:41:19.567 [main] INFO  JDBC.repository.FunctionRepository - Operation start: function search by ID 3597
+02:41:19.588 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.589 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/select_function_id.sql
+02:41:19.589 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function found
+02:41:19.589 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Function DTO
+02:41:19.610 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testFindAllSortedByNameEmpty" classname="repository.FunctionRepositoryTest" time="0.434">
+    <system-out><![CDATA[02:41:19.735 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.756 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.760 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739279760_1
+02:41:19.780 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.780 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:19.781 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:19.781 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user pop_1767739279760_1
+02:41:19.802 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.802 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:19.804 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 2
+02:41:19.804 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function sin(x)
+02:41:19.823 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.824 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:19.825 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3600 (saved as whole, not point by point)
+02:41:19.825 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function cos(x)
+02:41:19.954 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.954 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:19.956 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3601 (saved as whole, not point by point)
+02:41:19.956 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function x^2
+02:41:19.978 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:19.980 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:19.981 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3602 (saved as whole, not point by point)
+02:41:20.003 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.004 [main] INFO  JDBC.repository.FunctionRepository - Search for functions sorted by name
+02:41:20.024 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.025 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/select_functions_sorted_name.sql
+02:41:20.026 [main] INFO  JDBC.repository.FunctionRepository - Found 0 sorted functions
+02:41:20.045 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteFunctionOfUser2" classname="repository.FunctionRepositoryTest" time="0.454">
+    <system-out><![CDATA[02:41:20.068 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.089 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.092 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739280092_1
+02:41:20.218 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.218 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:20.220 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:20.220 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user pop_1767739280092_1
+02:41:20.241 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.242 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:20.243 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 2
+02:41:20.243 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function sin(x)
+02:41:20.264 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.264 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:20.265 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3603 (saved as whole, not point by point)
+02:41:20.266 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function cos(x)
+02:41:20.287 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.288 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:20.289 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3604 (saved as whole, not point by point)
+02:41:20.289 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function x^2
+02:41:20.310 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.310 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:20.312 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3605 (saved as whole, not point by point)
+02:41:20.312 [main] INFO  JDBC.repository.FunctionRepository - Start of the operation: deleting the function from the ID 3604
+02:41:20.334 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.334 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/delete_function.sql
+02:41:20.336 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: the  function has been deleted
+02:41:20.336 [main] INFO  JDBC.repository.FunctionRepository - Operation start: function search by ID 3604
+02:41:20.457 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.457 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/select_function_id.sql
+02:41:20.458 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function with ID 3604 not found
+02:41:20.458 [main] INFO  JDBC.repository.FunctionRepository - Operation start: getting all the functions
+02:41:20.478 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.478 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/select_all_functions.sql
+02:41:20.479 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Function DTO
+02:41:20.479 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Function DTO
+02:41:20.479 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: 2 functions found
+02:41:20.499 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateNonExistent" classname="repository.FunctionRepositoryTest" time="0.316">
+    <system-out><![CDATA[02:41:20.523 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.658 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.661 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739280661_1
+02:41:20.682 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.682 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:20.683 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:20.683 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user pop_1767739280661_1
+02:41:20.703 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.703 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:20.704 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 2
+02:41:20.704 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function sin(x)
+02:41:20.725 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.725 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:20.727 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3606 (saved as whole, not point by point)
+02:41:20.727 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function cos(x)
+02:41:20.748 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.748 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:20.749 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3607 (saved as whole, not point by point)
+02:41:20.749 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function x^2
+02:41:20.771 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.771 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:20.772 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3608 (saved as whole, not point by point)
+02:41:20.773 [main] INFO  JDBC.repository.FunctionRepository - Operation start: updating the function with ID 99999
+02:41:20.794 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.794 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/update_function.sql
+02:41:20.795 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: the not  function has been updated (saved as whole, not point by point)
+02:41:20.816 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testInsert" classname="repository.FunctionRepositoryTest" time="0.326">
+    <system-out><![CDATA[02:41:20.940 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.963 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.966 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739280966_1
+02:41:20.987 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:20.987 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:20.988 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:20.989 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user pop_1767739280966_1
+02:41:21.009 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.009 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:21.010 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 2
+02:41:21.010 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function sin(x)
+02:41:21.030 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.031 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:21.032 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3609 (saved as whole, not point by point)
+02:41:21.032 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function cos(x)
+02:41:21.055 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.056 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:21.057 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3610 (saved as whole, not point by point)
+02:41:21.057 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function x^2
+02:41:21.078 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.078 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:21.079 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3611 (saved as whole, not point by point)
+02:41:21.079 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function tan(x)
+02:41:21.099 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.099 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:21.101 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3612 (saved as whole, not point by point)
+02:41:21.101 [main] INFO  JDBC.repository.FunctionRepository - Operation start: function search by ID 3612
+02:41:21.120 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.121 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/select_function_id.sql
+02:41:21.122 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function found
+02:41:21.122 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Function DTO
+02:41:21.142 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testFindByIdNonExistent" classname="repository.FunctionRepositoryTest" time="0.303">
+    <system-out><![CDATA[02:41:21.167 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.187 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.190 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739281190_1
+02:41:21.317 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.317 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:21.319 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:21.319 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user pop_1767739281190_1
+02:41:21.338 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.339 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:21.340 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 2
+02:41:21.340 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function sin(x)
+02:41:21.359 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.359 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:21.361 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3613 (saved as whole, not point by point)
+02:41:21.361 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function cos(x)
+02:41:21.381 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.381 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:21.383 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3614 (saved as whole, not point by point)
+02:41:21.383 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function x^2
+02:41:21.403 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.403 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:21.404 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3615 (saved as whole, not point by point)
+02:41:21.404 [main] INFO  JDBC.repository.FunctionRepository - Operation start: function search by ID 99999
+02:41:21.424 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.424 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/select_function_id.sql
+02:41:21.425 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function with ID 99999 not found
+02:41:21.445 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdate" classname="repository.FunctionRepositoryTest" time="0.348">
+    <system-out><![CDATA[02:41:21.470 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.491 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.495 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user bob_1767739281495_1
+02:41:21.617 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.617 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:21.618 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 1
+02:41:21.618 [main] INFO  JDBC.repository.UserRepository - Operation start: adding a user pop_1767739281495_1
+02:41:21.640 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.640 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/users/insert_user.sql
+02:41:21.642 [main] INFO  JDBC.repository.UserRepository - The operation is completed: the user has been added with the ID 2
+02:41:21.642 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function sin(x)
+02:41:21.662 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.662 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:21.664 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3616 (saved as whole, not point by point)
+02:41:21.664 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function cos(x)
+02:41:21.683 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.684 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:21.685 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3617 (saved as whole, not point by point)
+02:41:21.685 [main] INFO  JDBC.repository.FunctionRepository - Operation start: adding a function x^2
+02:41:21.707 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.707 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/insert_function.sql
+02:41:21.708 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function added with ID 3618 (saved as whole, not point by point)
+02:41:21.708 [main] INFO  JDBC.repository.FunctionRepository - Operation start: function search by ID 3616
+02:41:21.730 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.730 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/select_function_id.sql
+02:41:21.731 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function found
+02:41:21.731 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Function DTO
+02:41:21.732 [main] INFO  JDBC.repository.FunctionRepository - Operation start: updating the function with ID 3616
+02:41:21.752 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.752 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/update_function.sql
+02:41:21.753 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: the  function has been updated (saved as whole, not point by point)
+02:41:21.753 [main] INFO  JDBC.repository.FunctionRepository - Operation start: function search by ID 3616
+02:41:21.773 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+02:41:21.773 [main] INFO  JDBC.repository.SqlHelper - SQL файл успешно загружен: scripts/functions/select_function_id.sql
+02:41:21.774 [main] INFO  JDBC.repository.FunctionRepository - Operation completed: function found
+02:41:21.774 [main] INFO  JDBC.repository.Mapper - Mapping ResultSet to Function DTO
+02:41:21.796 [main] INFO  J.r.database.DatabaseConnection - Successful connection to the database
+]]></system-out>
+  </testcase>
+</testsuite>

@@ -1,0 +1,1 @@
+INSERT INTO functions (name, expression, user_id, x_values, y_values, count) VALUES (?, ?, ?, ?, ?, ?);

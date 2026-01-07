@@ -9,5 +9,3 @@ public class SinFunction implements MathFunction {
 }
 
 
-
-

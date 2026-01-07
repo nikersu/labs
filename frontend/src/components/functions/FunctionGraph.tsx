@@ -372,13 +372,14 @@ const FunctionGraph: React.FC<FunctionGraphProps> = ({
               <Tooltip content={<CustomTooltip />} />
               <Legend wrapperStyle={{ color: '#cbd5e1' }} />
               <Line
-                type="monotone"
+                type="linear"
                 dataKey="y"
                 stroke="#3b82f6"
                 strokeWidth={2}
                 dot={showPoints ? { r: 4, fill: '#3b82f6' } : false}
                 activeDot={{ r: 6 }}
                 name={functionData.name}
+                connectNulls={false}
               />
             </LineChart>
           </ResponsiveContainer>

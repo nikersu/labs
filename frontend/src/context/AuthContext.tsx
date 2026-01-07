@@ -53,16 +53,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = async (credentials: LoginCredentials) => {
     try {
+      // Используем метод login, который возвращает пользователя напрямую из ответа сервера
+      const user = await authService.login(credentials)
+      
       // Сохраняем credentials для последующих запросов
       setStoredCredentials(credentials.username, credentials.password)
       
-      // Получаем информацию о пользователе
-      const currentUser = await authService.getCurrentUser()
-      if (!currentUser) {
-        throw new Error('Не удалось получить информацию о пользователе')
-      }
-      
-      setUser(currentUser)
+      setUser(user)
     } catch (error) {
       clearStoredCredentials()
       throw error
