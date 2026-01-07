@@ -30,12 +30,10 @@ public class FunctionEntity {
     @JsonIgnore
     private UserEntity user;
 
-    @Lob
-    @Column(name = "x_values", columnDefinition = "TEXT")
+    @Column(name = "x_values", columnDefinition = "TEXT", length = Integer.MAX_VALUE)
     private String xValuesJson;
 
-    @Lob
-    @Column(name = "y_values", columnDefinition = "TEXT")
+    @Column(name = "y_values", columnDefinition = "TEXT", length = Integer.MAX_VALUE)
     private String yValuesJson;
 
     @Column(name = "count")
