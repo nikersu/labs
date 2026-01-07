@@ -3,6 +3,21 @@
     "name": "LabsOOP API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{adminUsername}}",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "{{adminPassword}}",
+        "type": "string"
+      }
+    ]
+  },
   "item": [
     {
       "name": "Users - Create",
@@ -22,10 +37,16 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(201);",
-              "const data = pm.response.json();",
-              "pm.environment.set('userId', data.id);",
-              "pm.environment.set('username', data.username);"
+              "pm.test('Status code is 201', function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "pm.test('Response has user data', function () {",
+              "    var responseData = pm.response.json();",
+              "    pm.environment.set('userId', responseData.id);",
+              "    pm.environment.set('username', responseData.username);",
+              "    pm.expect(responseData).to.have.property('id');",
+              "    pm.expect(responseData).to.have.property('username');",
+              "});"
             ]
           }
         }
@@ -57,8 +78,12 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "pm.expect(pm.response.json()).to.be.an('array');"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Response is an array', function () {",
+              "    pm.expect(pm.response.json()).to.be.an('array');",
+              "});"
             ]
           }
         }
@@ -80,9 +105,13 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "const data = pm.response.json();",
-              "pm.expect(data).to.have.property('id', parseInt(pm.environment.get('userId'), 10));"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('User ID matches', function () {",
+              "    var responseData = pm.response.json();",
+              "    pm.expect(responseData).to.have.property('id', parseInt(pm.environment.get('userId'), 10));",
+              "});"
             ]
           }
         }
@@ -104,9 +133,13 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "const data = pm.response.json();",
-              "pm.expect(data).to.have.property('username', pm.environment.get('username'));"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Username matches', function () {",
+              "    var responseData = pm.response.json();",
+              "    pm.expect(responseData).to.have.property('username', pm.environment.get('username'));",
+              "});"
             ]
           }
         }
@@ -137,9 +170,13 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "const data = pm.response.json();",
-              "pm.expect(data).to.have.property('username', pm.environment.get('usernameUpdated'));"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Updated username matches', function () {",
+              "    var responseData = pm.response.json();",
+              "    pm.expect(responseData).to.have.property('username', pm.environment.get('usernameUpdated'));",
+              "});"
             ]
           }
         }
@@ -181,10 +218,14 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(201);",
-              "const data = pm.response.json();",
-              "pm.environment.set('functionId', data.id);",
-              "pm.expect(data).to.have.property('userId', parseInt(pm.environment.get('userId'), 10));"
+              "pm.test('Status code is 201', function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "pm.test('Response has function data', function () {",
+              "    var responseData = pm.response.json();",
+              "    pm.environment.set('functionId', responseData.id);",
+              "    pm.expect(responseData).to.have.property('userId', parseInt(pm.environment.get('userId'), 10));",
+              "});"
             ]
           }
         }
@@ -209,29 +250,6 @@
       }
     },
     {
-      "name": "Functions - Get All",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "pm.response.to.have.status(200);",
-              "pm.expect(pm.response.json()).to.be.an('array');"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "method": "GET",
-        "url": {
-          "raw": "{{baseUrl}}/api/functions",
-          "host": ["{{baseUrl}}"],
-          "path": ["api", "functions"]
-        }
-      }
-    },
-    {
       "name": "Functions - Get By Id",
       "event": [
         {
@@ -239,9 +257,13 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "const data = pm.response.json();",
-              "pm.expect(data).to.have.property('id', parseInt(pm.environment.get('functionId'), 10));"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Function ID matches', function () {",
+              "    var responseData = pm.response.json();",
+              "    pm.expect(responseData).to.have.property('id', parseInt(pm.environment.get('functionId'), 10));",
+              "});"
             ]
           }
         }
@@ -263,8 +285,12 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "pm.expect(pm.response.json()).to.be.an('array');"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Response is an array', function () {",
+              "    pm.expect(pm.response.json()).to.be.an('array');",
+              "});"
             ]
           }
         }
@@ -286,8 +312,12 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "pm.expect(pm.response.json()).to.be.an('array');"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Response is an array', function () {",
+              "    pm.expect(pm.response.json()).to.be.an('array');",
+              "});"
             ]
           }
         }
@@ -333,9 +363,13 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "const data = pm.response.json();",
-              "pm.expect(data).to.have.property('name', pm.environment.get('functionNameUpdated'));"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Updated function name matches', function () {",
+              "    var responseData = pm.response.json();",
+              "    pm.expect(responseData).to.have.property('name', pm.environment.get('functionNameUpdated'));",
+              "});"
             ]
           }
         }
@@ -382,9 +416,13 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(201);",
-              "const data = pm.response.json();",
-              "pm.expect(data).to.have.property('functionId', parseInt(pm.environment.get('functionId'), 10));"
+              "pm.test('Status code is 201', function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "pm.test('Point function ID matches', function () {",
+              "    var responseData = pm.response.json();",
+              "    pm.expect(responseData).to.have.property('functionId', parseInt(pm.environment.get('functionId'), 10));",
+              "});"
             ]
           }
         }
@@ -409,29 +447,6 @@
       }
     },
     {
-      "name": "Points - Get All",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "pm.response.to.have.status(200);",
-              "pm.expect(pm.response.json()).to.be.an('array');"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "method": "GET",
-        "url": {
-          "raw": "{{baseUrl}}/api/points",
-          "host": ["{{baseUrl}}"],
-          "path": ["api", "points"]
-        }
-      }
-    },
-    {
       "name": "Points - Get By Function",
       "event": [
         {
@@ -439,8 +454,12 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "pm.expect(pm.response.json()).to.be.an('array');"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Response is an array', function () {",
+              "    pm.expect(pm.response.json()).to.be.an('array');",
+              "});"
             ]
           }
         }
@@ -462,8 +481,12 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "pm.expect(pm.response.json()).to.be.an('array');"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Response is an array', function () {",
+              "    pm.expect(pm.response.json()).to.be.an('array');",
+              "});"
             ]
           }
         }
@@ -503,9 +526,13 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "const data = pm.response.json();",
-              "pm.expect(data).to.have.property('xValue', parseFloat(pm.environment.get('pointX')));"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Point X value matches', function () {",
+              "    var responseData = pm.response.json();",
+              "    pm.expect(responseData).to.have.property('xValue', parseFloat(pm.environment.get('pointX')));",
+              "});"
             ]
           }
         }
@@ -536,9 +563,13 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "const data = pm.response.json();",
-              "pm.expect(data).to.have.property('yValue', pm.environment.get('pointYUpdated'));"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Updated Y value matches', function () {",
+              "    var responseData = pm.response.json();",
+              "    pm.expect(responseData).to.have.property('yValue', pm.environment.get('pointYUpdated'));",
+              "});"
             ]
           }
         }
@@ -570,9 +601,13 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "const data = pm.response.json();",
-              "pm.expect(data).to.have.property('username', pm.environment.get('usernameUpdated'));"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Username matches', function () {",
+              "    var responseData = pm.response.json();",
+              "    pm.expect(responseData).to.have.property('username', pm.environment.get('usernameUpdated'));",
+              "});"
             ]
           }
         }
@@ -594,9 +629,13 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "const data = pm.response.json();",
-              "pm.expect(data).to.have.property('id', parseInt(pm.environment.get('functionId'), 10));"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Function ID matches', function () {",
+              "    var responseData = pm.response.json();",
+              "    pm.expect(responseData).to.have.property('id', parseInt(pm.environment.get('functionId'), 10));",
+              "});"
             ]
           }
         }
@@ -618,9 +657,13 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "const data = pm.response.json();",
-              "pm.expect(data).to.have.property('xValue', parseFloat(pm.environment.get('pointX')));"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Point X value matches', function () {",
+              "    var responseData = pm.response.json();",
+              "    pm.expect(responseData).to.have.property('xValue', parseFloat(pm.environment.get('pointX')));",
+              "});"
             ]
           }
         }
@@ -642,8 +685,12 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "pm.expect(pm.response.json()).to.be.an('array');"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Response is an array', function () {",
+              "    pm.expect(pm.response.json()).to.be.an('array');",
+              "});"
             ]
           }
         }
@@ -679,8 +726,12 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "pm.expect(pm.response.json()).to.be.an('array');"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Response is an array', function () {",
+              "    pm.expect(pm.response.json()).to.be.an('array');",
+              "});"
             ]
           }
         }
@@ -720,8 +771,12 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "pm.expect(pm.response.json()).to.be.an('array');"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Response is an array', function () {",
+              "    pm.expect(pm.response.json()).to.be.an('array');",
+              "});"
             ]
           }
         }
@@ -743,8 +798,12 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(200);",
-              "pm.expect(pm.response.json()).to.be.an('array');"
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Response is an array', function () {",
+              "    pm.expect(pm.response.json()).to.be.an('array');",
+              "});"
             ]
           }
         }
@@ -766,7 +825,9 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(204);"
+              "pm.test('Status code is 204', function () {",
+              "    pm.response.to.have.status(204);",
+              "});"
             ]
           }
         }
@@ -788,7 +849,9 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(204);"
+              "pm.test('Status code is 204', function () {",
+              "    pm.response.to.have.status(204);",
+              "});"
             ]
           }
         }
@@ -810,7 +873,9 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.response.to.have.status(204);"
+              "pm.test('Status code is 204', function () {",
+              "    pm.response.to.have.status(204);",
+              "});"
             ]
           }
         }
